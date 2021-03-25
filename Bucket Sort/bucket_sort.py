@@ -24,9 +24,9 @@ def insertion_sort_v2(A):
 
 #Main bedal, may be inaccurate for certain test cases
 def bucket_sort(A):
-    bucket_num = ceil(max(A)/10)
+    bucket_num = ceil(max(A)/10)    #Assumes a bucket size of 10, eg. with range 0-9, 10-19...
     buckets = {}
-    for i in range(bucket_num):
+    for i in range(bucket_num + 1): #Adding 1 overcomes issue of missing numbers that are multiples of 10
         buckets[i] = []
     
     for i in A:
@@ -42,6 +42,27 @@ def bucket_sort(A):
 
     return ans_arr
 
-A = [154, 56, 77, 134, 186, 56, 94, 24, 13, 83, 95, 143]
-A = bucket_sort(A)
+#Follows lecture pseudocode which assumes number of bucket = n
+def bucket_sort_v2(A):
+    bucket_num = len(A)
+    buckets = {}
+
+    for i in range(0,bucket_num):
+        buckets[i] = []
+
+    divider = ceil((max(A) + 1) / (bucket_num)) #Divider formula
+
+    for i in A:
+        idx = floor(i / divider)
+        buckets[idx].append(i)
+    
+    ans_array = []
+    
+    for key in buckets:
+        ans_array.extend(buckets[key])
+    
+    return ans_array
+
+A = [10, 56, 77, 134, 186, 56, 94, 24, 13, 83, 95, 143]
+A = bucket_sort_v2(A)
 print(A)
