@@ -40,6 +40,8 @@ def bucket_sort(A):
     for key in buckets:
         ans_arr.extend(buckets[key])
 
+    return ans_arr
+
 A = [154, 56, 77, 134, 186, 56, 94, 24, 13, 83, 95, 143]
-bucket_sort(A)
+A = bucket_sort(A)
 print(A)

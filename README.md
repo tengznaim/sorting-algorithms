@@ -10,11 +10,11 @@ Future ideas for this repository include enhancing the algorithms and documentat
 
 - Bubble Sort (Two versions, one based on a previous Data Structure course and one based on a current Algorithm Design and Analysis course)
 - Counting Sort
-- Bucket Sort (Not working, needs rework)
+- Bucket Sort (Slightly works but has caveats for when a number is a multiple of 10, eg. 20,30,40 - has problems with bucket generation)
 - Shell Sort
 - Radix Sort (Use v2 as the first version is a hacked together method that does not properly work)
 - Insertion Sort (Two versions, 1 from DS and another from Algo)
 
 # References
 
-To be updated.
+1. Radix Sort - https://www.geeksforgeeks.org/radix-sort/
