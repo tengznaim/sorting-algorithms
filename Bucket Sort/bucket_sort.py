@@ -1,4 +1,5 @@
 from math import *
+import random
 
 #Algo Style
 def insertion_sort(A):
@@ -22,7 +23,6 @@ def insertion_sort_v2(A):
         for j in range(stop+1,i):
             A[j],A[i] = A[i],A[j]
 
-#Main bedal, may be inaccurate for certain test cases
 def bucket_sort(A):
     bucket_num = ceil(max(A)/10)    #Assumes a bucket size of 10, eg. with range 0-9, 10-19...
     buckets = {}
@@ -34,7 +34,8 @@ def bucket_sort(A):
         buckets[idx].append(i)
     
     for key in buckets:
-        insertion_sort(buckets[key])
+        if buckets[key]:    #Added a check to avoid calling insertion sort if the list is empty.
+            insertion_sort(buckets[key])
     
     ans_arr = []
     for key in buckets:
@@ -56,6 +57,10 @@ def bucket_sort_v2(A):
         idx = floor(i / divider)
         buckets[idx].append(i)
     
+    for key in buckets:
+        if buckets[key]:
+            insertion_sort(buckets[key])
+
     ans_array = []
     
     for key in buckets:
@@ -63,6 +68,20 @@ def bucket_sort_v2(A):
     
     return ans_array
 
-A = [10, 56, 77, 134, 186, 56, 94, 24, 13, 83, 95, 143]
-A = bucket_sort_v2(A)
-print(A)
+success = 0
+fail = 0
+
+for i in range(1,101):
+    A_test = [random.randint(1,1000) for i in range(0,100)]
+    A_compare = A_test.copy()
+    A_test = bucket_sort_v2(A_test)
+    A_compare.sort()    #Using in-built sort to guarantee that this is properly sorted
+    if A_test == A_compare:
+        print("Test {i} Passed. The lists are equal".format(i=i))
+        success += 1
+    else:
+        print("Test {i} Failed. The lists are not equal".format(i=i))
+        fail += 1
+    
+rate = (success + fail) / 100 * 100
+print("Success Rate: {rate}%".format(rate=rate))

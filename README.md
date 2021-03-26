@@ -23,8 +23,6 @@ Future ideas for this repository include enhancing the algorithms and documentat
   - Version 3 - Uses a hacked together bucket sort implementation. (Idea: Store the values directly rather than their indexes)
 - Insertion Sort (Two versions, 1 from DS and another from Algo)
 
----
-
 ## References
 
 1. Radix Sort - https://www.geeksforgeeks.org/radix-sort/
