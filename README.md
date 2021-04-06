@@ -6,7 +6,9 @@ These algorithms were either written from understanding (and hence may have issu
 
 Future ideas for this repository include enhancing the algorithms and documentation on the algorithms to help understanding.
 
-## Algorithms Currently Implemented (Iterative)
+## Algorithms Currently Implemented
+
+## Iterative
 
 - Bubble Sort
   - Version 1 - Based on a previous Data Structure course and theoretically has a complexity of **O(n^2)**
@@ -22,6 +24,10 @@ Future ideas for this repository include enhancing the algorithms and documentat
   - Version 2 - Functional version based on the GFG guide.
   - Version 3 - Uses a hacked together bucket sort implementation. (Idea: Store the values directly rather than their indexes)
 - Insertion Sort (Two versions, 1 from DS and another from Algo)
+
+## Recursive
+
+- Quick Sort
 
 ## References
 
