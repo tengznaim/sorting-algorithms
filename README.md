@@ -28,7 +28,16 @@ Future ideas for this repository include enhancing the algorithms and documentat
 ## Recursive
 
 - Quick Sort
+- Merge Sort
+- Heap Sort
 
 ## References
 
+### Iterative
+
 1. Radix Sort - https://www.geeksforgeeks.org/radix-sort/
+
+### Recursive
+
+1. Heap Sort - https://www.geeksforgeeks.org/heap-sort/
+2. Merge Sort - https://stackabuse.com/merge-sort-in-python/
